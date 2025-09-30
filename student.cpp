@@ -1,12 +1,11 @@
 #include "student.h"
 
-#include <initializer_list>
 #include <iostream>
 
 /* StudentRecord */
 
 StudentRecord::StudentRecord(float midterm, float final) 
-    /* TODO: Initializer list 사용해 초기화 해보기 */
+/* TODO: Initializer list 사용해 초기화 해보기 */
     : midterm(midterm), final(final) {}
 
 float StudentRecord::getTotal() const {
