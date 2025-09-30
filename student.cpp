@@ -1,20 +1,23 @@
 #include "student.h"
 
+#include <initializer_list>
 #include <iostream>
 
 /* StudentRecord */
 
 StudentRecord::StudentRecord(float midterm, float final) 
-/* TODO: Initializer list 사용해 초기화 해보기 */
-{}
+    /* TODO: Initializer list 사용해 초기화 해보기 */
+    : midterm(midterm), final(final) {}
 
 float StudentRecord::getTotal() const {
     /* TODO */
-    return 0.0f;
+    return ( midterm + final );
 }
 
 void StudentRecord::updateScores(float midterm, float final) {
     /* TODO: this keyword 사용해 보기 */
+    this->midterm = midterm;
+    this->final = final;
 }
 
 
@@ -22,13 +25,18 @@ void StudentRecord::updateScores(float midterm, float final) {
 
 Student::Student() 
 /* TODO: Initializer list 사용해 초기화 해보기 */
-{ }
+: name(""), id(100000), record(0.0f, 0.0f) {}
 
 Student::Student(const char *name, int id, float midterm, float final)
-/* TODO: Initializer list 사용해 초기화 해보기 */
-{  }
+{
+    this->name = name;
+    this->id = id;
+    this->record = StudentRecord(midterm, final);
+}
 
 void Student::updateRecord(const char *name, float midterm, float final) {
     /* TODO */
+    this->name = name;
+    this->record = StudentRecord(midterm, final);
 }
 
